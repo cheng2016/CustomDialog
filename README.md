@@ -9,7 +9,3 @@
 
 
 
-
-
-![](screenshot/custome_dialog_20180601.gif)
-
