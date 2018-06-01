@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:background="@drawable/plan_shape"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/widget_size_40"
+        android:layout_marginTop="@dimen/widget_size_10"
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/widget_size_13"
+            android:padding="2dp"
+            android:text="紧急联系人"
+            android:textColor="@color/text_title_narmal"
+            android:textSize="@dimen/font_size_16"
+            android:visibility="visible" />
+
+        <TextView
+            android:id="@+id/contact"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/widget_size_13"
+            android:padding="2dp"
+            android:text="电话本"
+            android:textColor="@color/app_bg"
+            android:textSize="@dimen/font_size_16"
+            android:visibility="visible" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/widget_size_100"
+        android:background="@color/white"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="visible">
+
+        <EditText
+            android:id="@+id/name"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/widget_size_40"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="@dimen/widget_size_13"
+            android:layout_marginRight="@dimen/widget_size_13"
+            android:hint="姓名："
+            android:padding="@dimen/widget_size_8"
+            android:background="@drawable/shape_edit"
+            android:text=""
+            android:textColor="@color/black"
+            android:textSize="@dimen/font_size_15"
+            android:visibility="visible" />
+
+        <EditText
+            android:id="@+id/phone"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/widget_size_40"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="@dimen/widget_size_13"
+            android:layout_marginRight="@dimen/widget_size_13"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/shape_edit"
+            android:hint="电话："
+            android:padding="@dimen/widget_size_8"
+            android:text=""
+            android:textColor="@color/black"
+            android:textSize="@dimen/font_size_15" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:visibility="invisible"
+        android:background="@color/splite_line" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/login_button_h"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/confirm"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/button_plan_left_selector"
+            android:text="@string/confirm"
+            android:textColor="@color/app_bg"
+            android:textSize="@dimen/font_size_15" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="@dimen/widget_size_5"
+            android:background="@color/splite_line" />
+
+        <Button
+            android:id="@+id/cancel"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/button_plan_right_selector"
+            android:text="@string/cancel"
+            android:textColor="@color/disable_text"
+            android:textSize="@dimen/font_size_15" />
+    </LinearLayout>
+</LinearLayout>
