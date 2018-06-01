@@ -3,4 +3,13 @@
 
 
 
-![](screenshot/20180601113855.png)   ![](screenshot/20180601113925.png)
+![](screenshot/Screenshot_1527833588.png)   ![](screenshot/Screenshot_1527833593.png)
+
+
+
+
+
+
+
+![](screenshot/custome_dialog_20180601.gif)
+
