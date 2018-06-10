@@ -65,11 +65,11 @@ public class ChooseDialog extends Dialog implements View.OnClickListener {
         }
 
         View dialogView = LayoutInflater.from(getContext()).inflate(R.layout.dialog_choose, null);
-        nameEdit = (EditText) dialogView.findViewById(R.id.name);
-        phoneEdit = (EditText) dialogView.findViewById(R.id.phone);
-        contactTv = (TextView) dialogView.findViewById(R.id.contact);
-        confirmBtn = (Button) dialogView.findViewById(R.id.confirm);
-        cancelBtn = (Button) dialogView.findViewById(R.id.cancel);
+        nameEdit = dialogView.findViewById(R.id.name);
+        phoneEdit = dialogView.findViewById(R.id.phone);
+        contactTv = dialogView.findViewById(R.id.contact);
+        confirmBtn = dialogView.findViewById(R.id.confirm);
+        cancelBtn = dialogView.findViewById(R.id.cancel);
         confirmBtn.setOnClickListener(this);
         cancelBtn.setOnClickListener(this);
         cancelBtn.setOnClickListener(this);

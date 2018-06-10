@@ -10,7 +10,7 @@
         android:id="@+id/alert_dialog_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/widget_size_30"
+        android:layout_margin="@dimen/widget_size_60"
         android:text="ShowAlertDialog"
         android:textAllCaps="false"
         tools:layout_editor_absoluteX="44dp"
@@ -20,10 +20,38 @@
         android:id="@+id/eit_dialog_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/widget_size_100"
+        android:layout_marginLeft="@dimen/widget_size_60"
+        android:layout_marginRight="@dimen/widget_size_60"
+        android:layout_marginTop="@dimen/widget_size_120"
         android:text="ShowEditDialog"
         android:textAllCaps="false"
         tools:layout_editor_absoluteX="119dp"
         tools:layout_editor_absoluteY="89dp" />
+
+
+    <Button
+        android:id="@+id/sheet_dialog_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/widget_size_60"
+        android:layout_marginRight="@dimen/widget_size_60"
+        android:layout_marginTop="@dimen/widget_size_180"
+        android:text="ShowSheetDialog"
+        android:textAllCaps="false"
+        tools:layout_editor_absoluteX="44dp"
+        tools:layout_editor_absoluteY="185dp" />
+
+
+    <Button
+        android:id="@+id/custom_dialog_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/widget_size_60"
+        android:layout_marginRight="@dimen/widget_size_60"
+        android:layout_marginTop="@dimen/widget_size_240"
+        android:text="ShowCustomDialog"
+        android:textAllCaps="false"
+        tools:layout_editor_absoluteX="44dp"
+        tools:layout_editor_absoluteY="185dp" />
 
 </RelativeLayout>
