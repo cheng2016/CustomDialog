@@ -7,7 +7,7 @@
 
 ```
 MyAlertDialog myAlertDialog = new MyAlertDialog(this)
-		.setTitle("提示")
+	.setTitle("提示")
         .setMessage("确认删除该联系人吗")
         .setPositiveButton("确认", new View.OnClickListener() {
             @Override
