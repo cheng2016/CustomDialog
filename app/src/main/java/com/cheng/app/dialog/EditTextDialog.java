@@ -15,7 +15,7 @@ import android.widget.TextView;
 
 import com.cheng.app.R;
 
-public class ChooseDialog extends Dialog implements View.OnClickListener {
+public class EditTextDialog extends Dialog implements View.OnClickListener {
 
     protected Context mContext;
 
@@ -29,24 +29,24 @@ public class ChooseDialog extends Dialog implements View.OnClickListener {
 
     private OnDialogClickListener listener;
 
-    public ChooseDialog(@NonNull Context context) {
+    public EditTextDialog(@NonNull Context context) {
         super(context);
         initView(context);
     }
 
-    public ChooseDialog(@NonNull Context context, String name, String phone) {
+    public EditTextDialog(@NonNull Context context, String name, String phone) {
         super(context);
         initView(context);
         setNameEdit(name);
         setPhoneEdit(phone);
     }
 
-    public ChooseDialog(@NonNull Context context, int themeResId) {
+    public EditTextDialog(@NonNull Context context, int themeResId) {
         super(context, themeResId);
         initView(context);
     }
 
-    protected ChooseDialog(@NonNull Context context, boolean cancelable, @Nullable OnCancelListener cancelListener) {
+    protected EditTextDialog(@NonNull Context context, boolean cancelable, @Nullable OnCancelListener cancelListener) {
         super(context, cancelable, cancelListener);
         initView(context);
     }

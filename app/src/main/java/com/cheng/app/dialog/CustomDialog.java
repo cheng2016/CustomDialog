@@ -4,8 +4,10 @@ import android.app.Dialog;
 import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.TextView;
@@ -38,6 +40,17 @@ public class CustomDialog extends Dialog{
     }
 
     private CustomDialog initView(Context context) {
+        this.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        this.getWindow().setBackgroundDrawableResource(R.drawable.transparent_bg);
+        mContext = context;
+        Window window = this.getWindow();
+        mLayoutParams = window.getAttributes();
+        mLayoutParams.alpha = 1f;
+        window.setAttributes(mLayoutParams);
+        if (mLayoutParams != null) {
+            mLayoutParams.height = android.view.ViewGroup.LayoutParams.MATCH_PARENT;
+            mLayoutParams.gravity = Gravity.CENTER;
+        }
         mContext = context;
 
         View dialogView = LayoutInflater.from(getContext()).inflate(R.layout.dialog_custom, null);

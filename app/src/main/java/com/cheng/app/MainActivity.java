@@ -11,7 +11,7 @@ import android.widget.Toast;
 
 import com.cheng.app.dialog.ActionSheetDialog.*;
 import com.cheng.app.dialog.ActionSheetDialog;
-import com.cheng.app.dialog.ChooseDialog;
+import com.cheng.app.dialog.EditTextDialog;
 import com.cheng.app.dialog.CustomDialog;
 import com.cheng.app.dialog.MyAlertDialog;
 import com.contrarywind.listener.OnItemSelectedListener;
@@ -82,7 +82,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 customDialog.show();
                 break;
             case R.id.eit_dialog_btn:
-                new ChooseDialog(this).show();
+                new EditTextDialog(this).show();
                 break;
             case R.id.alert_dialog_btn:
                 MyAlertDialog myAlertDialog = new MyAlertDialog(this)

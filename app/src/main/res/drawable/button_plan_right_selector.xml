@@ -5,14 +5,14 @@
         <shape >
             <solid android:color="@color/button_plan_color_" />
             <!-- <corners android:bottomLeftRadius="6dp" android:bottomRightRadius="6dp"/> -->
-           <corners android:bottomRightRadius="6dp"/>
+           <corners android:bottomRightRadius="@dimen/widget_size_8"/>
         </shape>
     </item>
     <item android:state_pressed="false">
         <shape >
              <solid android:color="@color/white" />
              <!-- <corners android:bottomLeftRadius="6dp" android:bottomRightRadius="6dp"/> -->
-             <corners android:bottomRightRadius="6dp"/>
+             <corners android:bottomRightRadius="@dimen/widget_size_8"/>
         </shape>
     </item>
 </selector>
