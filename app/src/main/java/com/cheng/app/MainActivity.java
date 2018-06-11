@@ -14,6 +14,11 @@ import com.cheng.app.dialog.ActionSheetDialog;
 import com.cheng.app.dialog.ChooseDialog;
 import com.cheng.app.dialog.CustomDialog;
 import com.cheng.app.dialog.MyAlertDialog;
+import com.contrarywind.listener.OnItemSelectedListener;
+import com.contrarywind.view.WheelView;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import java.io.File;
 
@@ -25,6 +30,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private static final int PHOTO_REQUEST_CUT = 3;// 结果
     private String headImagPath = Environment.getExternalStorageDirectory().toString() + File.separator + "usericon.jpg";
 
+    WheelView wheelView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,13 +42,43 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         findViewById(R.id.custom_dialog_btn).setOnClickListener(this);
         findViewById(R.id.sheet_dialog_btn).setOnClickListener(this);
+
+        wheelView = findViewById(R.id.wheelview);
+        wheelView.setCyclic(false);
+
+        final List<String> mOptionsItems = new ArrayList<>();
+        mOptionsItems.add("item0");
+        mOptionsItems.add("item1");
+        mOptionsItems.add("item2");
+
+        wheelView.setAdapter(new ArrayWheelAdapter(mOptionsItems));
+        wheelView.setOnItemSelectedListener(new OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(int index) {
+                Toast.makeText(MainActivity.this, "" + mOptionsItems.get(index), Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.custom_dialog_btn:
-                CustomDialog customDialog = new CustomDialog(this);
+                CustomDialog customDialog = new CustomDialog(this)
+                        .setTitle("这是一条消息")
+                        .setMessage("你确定删除这个联系人吗？")
+                        .setPositiveButton("确定", new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+
+                            }
+                        })
+                        .setCancelButton("取消", new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+
+                            }
+                        });
                 customDialog.show();
                 break;
             case R.id.eit_dialog_btn:
@@ -108,5 +145,4 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         return Environment.getExternalStorageState().equals(
                 Environment.MEDIA_MOUNTED);
     }
-
 }

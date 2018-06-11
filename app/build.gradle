@@ -26,4 +26,6 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    //这是一款仿iOS的PickerView控件，有时间选择器和选项选择器
+    implementation 'com.contrarywind:wheelview:4.0.5'
 }

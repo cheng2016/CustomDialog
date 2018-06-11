@@ -54,4 +54,11 @@
         tools:layout_editor_absoluteX="44dp"
         tools:layout_editor_absoluteY="185dp" />
 
+    <com.contrarywind.view.WheelView
+        android:id="@+id/wheelview"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/widget_size_120" />
+
+
 </RelativeLayout>

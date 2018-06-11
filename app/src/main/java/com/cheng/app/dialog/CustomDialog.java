@@ -3,22 +3,24 @@ package com.cheng.app.dialog;
 import android.app.Dialog;
 import android.content.Context;
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.TextView;
 
 import com.cheng.app.R;
 
-public class CustomDialog extends Dialog implements View.OnClickListener {
+public class CustomDialog extends Dialog{
 
     protected Context mContext;
 
-    private Button cancelBtn, confirmBtn;
+    protected WindowManager.LayoutParams mLayoutParams;
 
-    private TextView titleTv, contentTv;
+    private Button cancelBtn,confirmBtn;
 
-    private OnDialogClickListener listener;
+    private TextView titleTv,contentTv;
 
     public CustomDialog(@NonNull Context context) {
         super(context);
@@ -30,53 +32,60 @@ public class CustomDialog extends Dialog implements View.OnClickListener {
         initView(context);
     }
 
+    protected CustomDialog(@NonNull Context context, boolean cancelable, @Nullable OnCancelListener cancelListener) {
+        super(context, cancelable, cancelListener);
+        initView(context);
+    }
 
-    private void initView(Context context) {
+    private CustomDialog initView(Context context) {
         mContext = context;
+
         View dialogView = LayoutInflater.from(getContext()).inflate(R.layout.dialog_custom, null);
-        titleTv = dialogView.findViewById(R.id.title);
-        contentTv = dialogView.findViewById(R.id.content);
-        confirmBtn = dialogView.findViewById(R.id.confirm);
-        cancelBtn = dialogView.findViewById(R.id.cancel);
-        confirmBtn.setOnClickListener(this);
-        cancelBtn.setOnClickListener(this);
+        titleTv = (TextView) dialogView.findViewById(R.id.title);
+        contentTv = (TextView) dialogView.findViewById(R.id.content);
+        confirmBtn = (Button) dialogView.findViewById(R.id.confirm);
+        cancelBtn = (Button) dialogView.findViewById(R.id.cancel);
 //        setCancelable(false);
         setCanceledOnTouchOutside(false);
         setContentView(dialogView);
+
+        return this;
     }
 
-    public void setTitle(String message) {
+    public CustomDialog setTitle(String message){
         titleTv.setVisibility(View.VISIBLE);
         titleTv.setText(message);
+        return this;
     }
 
-    public void setMessage(String message) {
+    public CustomDialog setMessage(String message){
         contentTv.setVisibility(View.VISIBLE);
         contentTv.setText(message);
+        return this;
     }
 
-    @Override
-    public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.confirm:
-                if (listener != null) {
-                    listener.onConfirm(this);
-                }
+    public CustomDialog setPositiveButton(String str, final View.OnClickListener listener){
+        confirmBtn.setText(str);
+        confirmBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                listener.onClick(view);
                 dismiss();
-                break;
-            case R.id.cancel:
-                if (listener != null) {
-                    listener.onCancel(this);
-                }
-                dismiss();
-                break;
-            default:
-                break;
-        }
+            }
+        });
+        return this;
     }
 
 
-    public void setOnDialogClickListener(OnDialogClickListener listener) {
-        this.listener = listener;
+    public CustomDialog setCancelButton(String str, final View.OnClickListener listener){
+        cancelBtn.setText(str);
+        cancelBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                listener.onClick(view);
+                dismiss();
+            }
+        });
+        return this;
     }
 }
