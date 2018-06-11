@@ -28,7 +28,7 @@
             android:textColor="@color/black"
             android:textSize="18sp"
             android:textStyle="bold"
-            android:visibility="visible" />
+            android:visibility="gone" />
 
         <TextView
             android:id="@+id/content"
@@ -39,6 +39,7 @@
             android:padding="2dp"
             android:text="确认删除此段录音吗？"
             android:textColor="@color/black"
+            android:visibility="gone"
             android:textSize="16sp" />
     </LinearLayout>
 
