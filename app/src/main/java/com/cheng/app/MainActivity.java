@@ -14,8 +14,6 @@ import com.cheng.app.dialog.ActionSheetDialog;
 import com.cheng.app.dialog.EditTextDialog;
 import com.cheng.app.dialog.CustomDialog;
 import com.cheng.app.dialog.MyAlertDialog;
-import com.contrarywind.listener.OnItemSelectedListener;
-import com.contrarywind.view.WheelView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,7 +28,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private static final int PHOTO_REQUEST_CUT = 3;// 结果
     private String headImagPath = Environment.getExternalStorageDirectory().toString() + File.separator + "usericon.jpg";
 
-    WheelView wheelView;
+//    WheelView wheelView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,21 +41,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.custom_dialog_btn).setOnClickListener(this);
         findViewById(R.id.sheet_dialog_btn).setOnClickListener(this);
 
-        wheelView = findViewById(R.id.wheelview);
-        wheelView.setCyclic(false);
-
         final List<String> mOptionsItems = new ArrayList<>();
         mOptionsItems.add("item0");
         mOptionsItems.add("item1");
         mOptionsItems.add("item2");
-
-        wheelView.setAdapter(new ArrayWheelAdapter(mOptionsItems));
-        wheelView.setOnItemSelectedListener(new OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(int index) {
-                Toast.makeText(MainActivity.this, "" + mOptionsItems.get(index), Toast.LENGTH_SHORT).show();
-            }
-        });
     }
 
     @Override

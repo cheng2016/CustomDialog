@@ -1,23 +1,23 @@
 package com.cheng.app;
 
-import com.contrarywind.adapter.WheelAdapter;
+/*import com.contrarywind.adapter.WheelAdapter;
 
 import java.util.List;
 
-/**
+*//**
  * The simple Array wheel adapter
  * @param <T> the element type
- */
+ *//*
 public class ArrayWheelAdapter<T> implements WheelAdapter {
 	
 
 	// items
 	private List<T> items;
 
-	/**
+	*//**
 	 * Constructor
 	 * @param items the items
-	 */
+	 *//*
 	public ArrayWheelAdapter(List<T> items) {
 		this.items = items;
 
@@ -41,4 +41,4 @@ public class ArrayWheelAdapter<T> implements WheelAdapter {
 		return items.indexOf(o);
 	}
 
-}
+}*/
