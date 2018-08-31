@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
+    android:layout_width="fill_parent"
     android:layout_height="wrap_content"
     android:layout_gravity="center"
     android:background="@drawable/plan_shape"
@@ -8,49 +8,50 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="@dimen/widget_size_100"
-        android:layout_marginTop="@dimen/font_size_10"
-        android:layout_marginLeft="@dimen/widget_size_10"
-        android:layout_marginRight="@dimen/widget_size_10"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/font_size_16"
         android:background="@color/white"
         android:gravity="center"
+        android:paddingTop="@dimen/widget_size_18"
+        android:paddingBottom="@dimen/widget_size_18"
         android:orientation="vertical"
         android:visibility="visible">
 
         <TextView
             android:id="@+id/title"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="10dp"
+            android:layout_height="@dimen/widget_size_36"
+            android:gravity="center_vertical"
             android:padding="2dp"
-            android:text="标题"
+            android:text="确认删除录音吗？"
             android:textColor="@color/black"
-            android:textSize="18sp"
+            android:textSize="@dimen/font_size_16"
             android:textStyle="bold"
-            android:visibility="gone" />
+            android:visibility="visible" />
 
         <TextView
             android:id="@+id/content"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/widget_size_36"
+            android:gravity="center_vertical"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="10dp"
             android:padding="2dp"
-            android:text="确认删除此段录音吗？"
+            android:text="这是一条消息！"
             android:textColor="@color/black"
-            android:visibility="gone"
-            android:textSize="16sp" />
+            android:visibility="visible"
+            android:textSize="@dimen/font_size_14" />
     </LinearLayout>
 
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
+        android:visibility="invisible"
         android:background="@color/splite_line" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="@dimen/login_button_h"
+        android:background="@drawable/plan_lr_shape"
         android:baselineAligned="false"
         android:orientation="horizontal">
 
@@ -66,7 +67,8 @@
 
         <View
             android:layout_width="1px"
-            android:layout_height="?android:attr/listPreferredItemHeight"
+            android:layout_height="@dimen/widget_size_20"
+            android:layout_gravity="center_vertical"
             android:background="@color/item_line" />
 
         <Button
