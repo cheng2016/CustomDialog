@@ -1,3 +1,5 @@
+package com.cheng.app.dialog;
+
 import android.app.Dialog;
 import android.content.res.Configuration;
 import android.content.Context;
