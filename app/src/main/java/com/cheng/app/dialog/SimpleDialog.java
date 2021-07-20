@@ -43,7 +43,7 @@ public class SimpleDialog extends Dialog {
     public SimpleDialog(@NonNull Context context, int themeResId) {
         super(context, themeResId);
         this.context = context;
-        setContentView(ResourceHelper.getLayoutId(context, "hygame_float_alert_dialog"));
+        setContentView(getLayoutId(context, "hygame_float_alert_dialog"));
         setCanceledOnTouchOutside(false);
         Utils.setAlertDialogWindow(this);
         initView();
@@ -75,10 +75,10 @@ public class SimpleDialog extends Dialog {
     }
 
     void initView() {
-        titleTv = findViewById(HY_Utils.getId(context, "hy_title"));
-        messageTv = findViewById(HY_Utils.getId(context, "hy_message"));
-        confrimBtn = findViewById(HY_Utils.getId(context, "hy_confirm_btn"));
-        cancelBtn = findViewById(HY_Utils.getId(context, "hy_cancel_btn"));
+        titleTv = findViewById(getId(context, "hy_title"));
+        messageTv = findViewById(getId(context, "hy_message"));
+        confrimBtn = findViewById(getId(context, "hy_confirm_btn"));
+        cancelBtn = findViewById(getId(context, "hy_cancel_btn"));
     }
 
     public SimpleDialog setTitle(String title) {
@@ -139,4 +139,16 @@ public class SimpleDialog extends Dialog {
         confrimBtn.setVisibility(showPosBtn ? View.VISIBLE : View.GONE);
         cancelBtn.setVisibility(showNegBtn ? View.VISIBLE : View.GONE);
     }
+    
+   public static int getLayoutId(Context paramActivity, String id) {
+        String packageName = paramActivity.getPackageName();
+        return paramActivity.getResources().getIdentifier(id, "layout",
+                packageName);
+    }
+    
+   public static int getId(Context paramActivity, String id) {
+		String packageName = paramActivity.getPackageName();
+		return paramActivity.getResources()
+				.getIdentifier(id, "id", packageName);
+	}
 }
