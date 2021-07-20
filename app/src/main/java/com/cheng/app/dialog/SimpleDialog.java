@@ -14,11 +14,8 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.u9pay.utils.HY_Utils;
-import com.u9pay.utils.ResourceHelper;
-
 /**
- * @ClassName HYGame_AlertDialog
+ * @ClassName SimpleDialog
  * @Description TODO
  * @Author chengzj
  * @Date 2021/7/15 15:33
@@ -37,7 +34,7 @@ public class SimpleDialog extends Dialog {
     private boolean showNegBtn = false;
 
     public SimpleDialog(@NonNull Context context) {
-        this(context, ResourceHelper.getStyleId(context, "HYGame_base_fragment_pop"));
+        this(context, getStyleId(context, "HYGame_base_fragment_pop"));
     }
 
     public SimpleDialog(@NonNull Context context, int themeResId) {
@@ -145,10 +142,16 @@ public class SimpleDialog extends Dialog {
         return paramActivity.getResources().getIdentifier(id, "layout",
                 packageName);
     }
-    
+	
+   public static int getStyleId(Context paramActivity, String id) {
+        String packageName = paramActivity.getPackageName();
+        return paramActivity.getResources().getIdentifier(id, "style",
+                packageName);
+    }
+
    public static int getId(Context paramActivity, String id) {
 		String packageName = paramActivity.getPackageName();
 		return paramActivity.getResources()
 				.getIdentifier(id, "id", packageName);
-	}
+   }
 }
