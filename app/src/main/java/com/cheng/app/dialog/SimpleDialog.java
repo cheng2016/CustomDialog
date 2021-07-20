@@ -42,33 +42,7 @@ public class SimpleDialog extends Dialog {
         this.context = context;
         setContentView(getLayoutId(context, "hygame_float_alert_dialog"));
         setCanceledOnTouchOutside(false);
-        Utils.setAlertDialogWindow(this);
         initView();
-    }
-  
-    public static void setAlertDialogWindow(Dialog dialog) {
-        dialog.setCancelable(true);
-        dialog.setCanceledOnTouchOutside(false);
-        Window window = dialog.getWindow();
-        WindowManager.LayoutParams lp = window.getAttributes();
-        Display display = window.getWindowManager().getDefaultDisplay();
-        Configuration cf = dialog.getContext().getResources().getConfiguration();
-        int ori = cf.orientation;
-        if (ori == cf.ORIENTATION_LANDSCAPE) {
-            lp.width = (int) (display.getWidth() * 0.38);
-            lp.height = (int) (display.getHeight() * 0.76);
-            if (HYGame_FloatMainFragment.ISRIGHT) {
-                window.setGravity(Gravity.RIGHT | Gravity.BOTTOM);
-            } else {
-                window.setGravity(Gravity.LEFT | Gravity.BOTTOM);
-            }
-            lp.x = display.getWidth() / 10;
-            window.getDecorView().setPadding(0, 0, 0, 10);
-        } else if (ori == cf.ORIENTATION_PORTRAIT) {
-            lp.width = (int) (display.getWidth() * 0.9);
-        }
-        Log.i("HY", "width : " + lp.width + " , height : " + lp.height + " display width : " + display.getWidth());
-        window.setAttributes(lp);
     }
 
     void initView() {
@@ -87,15 +61,6 @@ public class SimpleDialog extends Dialog {
     public SimpleDialog setMessage(String msg) {
         showMessage = true;
         messageTv.setText(TextUtils.isEmpty(msg) ? "" : msg);
-        return this;
-    }
-
-    public SimpleDialog setDefaultGrivity(){
-        getWindow().setGravity(Gravity.CENTER);
-        WindowManager.LayoutParams lp = getWindow().getAttributes();
-        lp.x = 0;
-        lp.height = (int) (getWindow().getWindowManager().getDefaultDisplay().getHeight() * 0.5);
-        getWindow().setAttributes(lp);
         return this;
     }
 
